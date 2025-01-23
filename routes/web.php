@@ -1,17 +1,12 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\employeeController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use App\Http\Controllers\ChirpController;
+use App\Http\Controllers\EmployeeController;
 
-route::get('/employees/create', [employeeController::class, 'create'])
-    ->name('employees.create');
-
-route::post('/employees', [employeeController::class, 'store'])
-    ->name('employees.store');
-    
 Route::get('/', function () {
     return Inertia::render('Welcome', [
         'canLogin' => Route::has('login'),
@@ -29,7 +24,20 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-    Route::get('/employees', [employeeController::class, 'index'])->name('employees.index');
 });
+
+// Route for /employees
+Route::get('/employees', [EmployeeController::class, 'index'])->name('employees.index'); // Ensure this route has a name
+Route::get('/employees/search', [EmployeeController::class, 'search'])->name('employees.search');
+
+// Resource route for chirps
+Route::resource('chirps', ChirpController::class)
+    ->only(['index', 'store', 'update', 'destroy'])
+    ->middleware(['auth', 'verified']);
+
+// Route for creating a new employee
+Route::get('/employees/create', [EmployeeController::class, 'create'])->name('employees.create');
+// Route for storing a new employee
+Route::post('/employees', [EmployeeController::class, 'store'])->name('employees.store');
 
 require __DIR__.'/auth.php';
