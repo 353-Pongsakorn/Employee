@@ -45,7 +45,7 @@ export default function Create({ departments = [] }) {
     };
 
     return (
-        <div className="max-w-4xl mx-auto mt-10 p-6 bg-white rounded-lg shadow-lg bg-gradient-to-r from-orange-50 via-white to-yellow-50 rounded-xl shadow-2xl">
+        <div className="max-w-4xl mx-auto mt-10 p-6 bg-white rounded-lg shadow-lg bg-gradient-to-r from-orange-50 via-white to-yellow-50  ">
             <ApplicationLogo className="h-24 w-auto mx-auto mb-4 text-orange-500" />
             <h1 className="text-4xl font-extrabold text-center mb-8 text-gray-800">
                 Create New Employee
@@ -54,7 +54,7 @@ export default function Create({ departments = [] }) {
             <form onSubmit={handleSubmit} className="space-y-6">
                 {/* Personal Details Section */}
                 <hr className="h-px my-6 bg-gray-200 border-0 dark:bg-gray-700"></hr>
-                <div className="bg-gray-50 p-6 rounded-lg shadow-md bg-gradient-to-r from-orange-50 via-white to-yellow-50 rounded-xl shadow-2xl">
+                <div className="bg-gray-50 p-6 rounded-lg shadow-md bg-gradient-to-r from-orange-50 via-white to-yellow-50 ">
                     <h2 className="text-xl font-bold mb-4 text-gray-700">
                         {" "}
                         Personal Details
@@ -112,7 +112,7 @@ export default function Create({ departments = [] }) {
 
                 {/* Employment Details Section */}
                 <hr className="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700"></hr>
-                <div className="bg-gray-50 p-6 rounded-lg shadow-md bg-gradient-to-r from-orange-50 via-white to-yellow-50 rounded-xl shadow-2xl">
+                <div className="bg-gray-50 p-6 rounded-lg shadow-md bg-gradient-to-r from-orange-50 via-white to-yellow-50 ">
                     <h2 className="text-xl font-bold mb-4 text-gray-700">
                         {" "}
                         Employment Details
@@ -230,7 +230,7 @@ export default function Create({ departments = [] }) {
 
                 {/* Profile Image */}
                 <hr className="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700"></hr>
-                <div className="bg-gray-50 p-6 rounded-lg shadow-md bg-gradient-to-r from-orange-50 via-white to-yellow-50 rounded-xl shadow-2xl">
+                <div className="bg-gray-50 p-6 rounded-lg shadow-md bg-gradient-to-r from-orange-50 via-white to-yellow-50 ">
                     <h2 className="text-xl font-bold mb-4 text-gray-700">
                         Profile Image
                     </h2>

@@ -26,6 +26,9 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+Route::resource('employees', EmployeeController::class);
+
+
 // Route for /employees
 Route::get('/employees', [EmployeeController::class, 'index'])->name('employees.index'); // Ensure this route has a name
 Route::get('/employees/search', [EmployeeController::class, 'search'])->name('employees.search');
